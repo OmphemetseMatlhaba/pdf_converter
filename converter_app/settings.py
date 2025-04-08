@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ti+$%sfbhhw4hb0iq$9)dg13a9rl10_zt5)uf758b@@o-%f8!i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [ 'pdf-converter-ypxz.onrender.com' ,'localhost', '127.0.0.1']
 
 
 # Application definition
