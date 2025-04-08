@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Advice</title>
+</head>
+<body>
+    <h1>Need Some Advice?</h1>
+
+    <div class ="card">
+        <h5>Here's a piece of advice for you:</h5>
+    <p>{{ advice }}</p>
+   
+
+    <form method="get" action="{% url 'get_advice' %}">
+        <button type="submit">Get New Advice</button>
+    </form>
+
+    <a href="{% url 'convert_pdf_view' %}"> Need To convert PDF to PNG?</a>
+</div>
+    
+</body>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #2b2b2b;
+    }
+    h1 {
+        color: #fcac01;
+        text-align: center;
+        /* margin-bottom: 10px; */
+
+    }
+
+    h5{
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 20px;
+        text-decoration: wavy;
+    }
+
+.card {
+        background: #292727;
+        padding: 60px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+
+
+
+    .card1 {
+        background: #2e2d2d;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+    }
+    p{
+       color: #ffffff;
+       text-decoration-thickness: wavy;
+       font-size: 45px;
+       font-weight: bold;
+    }
+
+    input[type="file"] {
+        margin-bottom: 10px;
+        text-align: center;
+        color:#ffffff;
+    }
+    button {
+        background-color: #fcac01;
+        color: white;
+        border-radius: 50px;
+        border:none;;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #f3b328;
+    }
+    .error {
+        color: red;
+        margin-top: 10px;
+    }
+
+</style>
+</html>

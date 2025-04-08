@@ -3,5 +3,6 @@ from converter import views
 
 urlpatterns = [
    
-     path('', views.convert_pdf_view, name='convert_pdf_view'),
+    path('', views.convert_pdf_view, name='convert_pdf_view'),
+    path('advice/', views.get_advice, name='get_advice'),
 ]

@@ -39,3 +39,20 @@ def convert_pdf_view(request):
         form = PDFUploadForm()
 
     return render(request, 'upload.html', {'form': form})
+
+
+import requests
+from django.shortcuts import render
+
+def get_advice(request):
+    api_url = 'https://api.api-ninjas.com/v1/advice'
+    api_key = 'lntEwUB2sHMblfZ4j2fkZA==mqGBRVhe51VFesRJ'  # Replace with your actual API key
+
+    response = requests.get(api_url, headers={'X-Api-Key': api_key})
+    
+    if response.status_code == requests.codes.ok:
+        advice = response.json().get('advice', 'No advice found.')
+    else:
+        advice = f"Error: {response.status_code} - {response.text}"
+    
+    return render(request, 'advice.html', {'advice': advice})
