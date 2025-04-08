@@ -14,10 +14,12 @@
     <form method="get" action="{% url 'get_advice' %}">
         <button type="submit">Get New Advice</button>
     </form>
-
-    <a href="{% url 'convert_pdf_view' %}"> Need To convert PDF to PNG?</a>
-</div>
     
+    <br><br>
+    <a href="{% url 'convert_pdf_view' %}"> Need To convert PDF to PNG?</a>
+
+</div>
+
 </body>
 
 <style>
@@ -97,5 +99,11 @@
         margin-top: 10px;
     }
 
+    a {
+            color: #fcac01;
+            text-decoration: none;
+            font-size: 20px;
+         
+        }
 </style>
 </html>

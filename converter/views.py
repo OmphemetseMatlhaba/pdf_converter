@@ -56,3 +56,4 @@ def get_advice(request):
         advice = f"Error: {response.status_code} - {response.text}"
     
     return render(request, 'advice.html', {'advice': advice})
+
