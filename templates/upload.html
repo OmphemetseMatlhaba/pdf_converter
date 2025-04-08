@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF to Image Converter</title>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<h1> Convert PDF TO PNG</h1>
+
+    <div class="card">
+
+        <h1>Upload PDF Files</h1>
+        <!-- <h5>Convert your PDF files to PNG images in seconds.</h5> -->
+        <h5>Simply upload your PDF file and click the button to convert.</h5>
+
+        <div class="card1">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#FFD43B" d="M464 128H272l-64-64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V176c0-26.5-21.5-48-48-48z"/></svg>
+
+    <form method="POST" enctype="multipart/form-data">
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload Image</button>
+    </form>
+</div>
+</div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #2b2b2b;
+        }
+        h1 {
+            color: #fcac01;
+            text-align: center;
+            /* margin-bottom: 10px; */
+
+        }
+
+        h5{
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: wavy;
+        }
+
+    .card {
+            background: #292727;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin: 0 auto;
+            align-items: center;
+            text-align: center;
+        }
+
+    
+
+        .card1 {
+            background: #2e2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin: 0 auto;
+            align-items: center;
+            text-align: center;
+        }
+    
+
+        input[type="file"] {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        button {
+            background-color: #fcac01;
+            color: white;
+            border-radius: 50px;
+            border:none;;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f3b328;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+      svg {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .fa-solid {
+            color: #fcac01;
+            font-size: 50px;
+        }
+        .fa-solid:hover {
+            color: #f3b328;
+        }
+    </style>
+    
+</body>
+</html>
