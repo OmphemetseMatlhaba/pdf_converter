@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import PDFUploadForm
 from pdf2image import convert_from_path
-
+import requests
 import os
 import uuid
 from zipfile import ZipFile
@@ -41,8 +41,7 @@ def convert_pdf_view(request):
     return render(request, 'upload.html', {'form': form})
 
 
-import requests
-from django.shortcuts import render
+
 
 def get_advice(request):
     api_url = 'https://api.api-ninjas.com/v1/advice'
@@ -57,3 +56,45 @@ def get_advice(request):
     
     return render(request, 'advice.html', {'advice': advice})
 
+
+
+
+
+import requests
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def profanity_filter(request):
+    profanity_result = None
+
+    if request.method == 'POST':
+        user_text = request.POST.get('text', '')
+
+        api_url = 'https://api.api-ninjas.com/v1/profanityfilter'
+        api_key = 'lntEwUB2sHMblfZ4j2fkZA==mqGBRVhe51VFesRJ'
+
+        try:
+            response = requests.get(
+                api_url,
+                headers={'X-Api-Key': api_key},
+                params={'text': user_text}
+            )
+
+            print("Status Code:", response.status_code)
+            print("Response Text:", response.text)
+
+            if response.status_code == 200:
+                data = response.json()
+                profanity_result = data.get('censored', 'No result found.', )
+            else:
+                profanity_result = f"API Error: {response.status_code}"
+
+        except Exception as e:
+            profanity_result = f"Request Failed: {str(e)}"
+
+    return render(request, 'profanity.html', {'result': profanity_result, })
+
+   
+
+    
